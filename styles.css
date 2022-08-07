@@ -15,16 +15,20 @@ body{
 .calculator{
     border: 1px solid gray;
     border-radius: 5px;
+    margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 300px;
+    
+    
     
 }
 .display{
     width: 100%;
     font-size: 5rem;
-    height: 80px;
+    height: 60px;
     border: none;
     background-color: #f7ebeb00;
     color: rgb(114, 38, 114);
