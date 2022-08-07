@@ -42,8 +42,5 @@ const operate = function (operator,firstNumber,secondNumber){
     
 };
 
-console.log(operate('*',545,13));
-console.log(operate('+',200,-30));
-console.log(operate('/',453,83));
-console.log(operate('-',1371,2500));
+
 
