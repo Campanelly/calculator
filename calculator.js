@@ -42,5 +42,10 @@ const operate = function (operator,firstNumber,secondNumber){
     
 };
 
+const number = document.getElementsByClassName('number');
+const operator = document.getElementsByClassName('operator');
+const AC = document.getElementsByClassName('AC');
+const equal = document.getElementsByClassName('equal');
 
+const display
 
