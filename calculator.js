@@ -1,3 +1,4 @@
+
 const add = function (firstNumber , secondNumber){
     let result;
     result = firstNumber + secondNumber;
@@ -42,10 +43,11 @@ const operate = function (operator,firstNumber,secondNumber){
     
 };
 
-const number = document.getElementsByClassName('number');
+const number = document.getElementsByClassName('number').value;
 const operator = document.getElementsByClassName('operator');
 const AC = document.getElementsByClassName('AC');
 const equal = document.getElementsByClassName('equal');
 
-const display
+
+
 
