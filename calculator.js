@@ -43,11 +43,23 @@ const operate = function (operator,firstNumber,secondNumber){
     
 };
 
-const number = document.getElementsByClassName('number').value;
+/*<input type="button" value="test" onClick="document.getElementById('textfield').innerHTML=this.value">
+<div id="textfield"></div>*/
+/*
+const one = document.querySelector('#one');
 const operator = document.getElementsByClassName('operator');
 const AC = document.getElementsByClassName('AC');
 const equal = document.getElementsByClassName('equal');
 
+const click = one.addEventListener('click',console.log('click'));*/
+const display = document.querySelector ('#display');
+const numbers = document.getElementsByClassName('number');
+
+for (button of numbers) {
+    button.addEventListener('click', function onClick() {
+      display.innerHTML += this.value;
+    });
+  }
 
 
-
+    
