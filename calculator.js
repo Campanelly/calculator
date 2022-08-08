@@ -57,8 +57,11 @@ const scnDisplay = document.querySelector ('#scnDisplay');
 const numbers = document.getElementsByClassName('number');
 const operators = document.getElementsByClassName('operator');
 const allClear = document.getElementById ('AC');
+const equal = document.getElementById('equal');
 let firstTerm;
 let secondTerm;
+let operator;
+
 const clear = allClear.addEventListener('click',()=>{
     mainDisplay.innerHTML = "";
     scnDisplay.innerHTML = "";
@@ -70,15 +73,26 @@ for (button of numbers) {
       mainDisplay.innerHTML += this.value;
       
     });
-  }
+};
+
 for (operator of operators){
     operator.addEventListener('click', function() {
         firstTerm = mainDisplay.innerHTML;
-        scnDisplay.innerHTML = firstTerm + this.value;
-        mainDisplay.innerHTML = '';
+        operator = this.value;
+        scnDisplay.innerHTML = `${firstTerm} ${this.value}`;
+        mainDisplay.innerHTML = "";
         
     });
-}
+};
+
+const result = equal.addEventListener('click', function(){
+    secondTerm = mainDisplay.innerHTML;
+    scnDisplay.innerHTML = `${firstTerm} ${operator} ${secondTerm} =`;
+    mainDisplay.innerHTML = operate(operator,firstTerm,secondTerm); 
+
+});
+
+
 
 
 
