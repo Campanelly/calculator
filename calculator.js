@@ -43,15 +43,6 @@ const operate = function (operator,firstNumber,secondNumber){
     
 };
 
-/*<input type="button" value="test" onClick="document.getElementById('textfield').innerHTML=this.value">
-<div id="textfield"></div>*/
-/*
-const one = document.querySelector('#one');
-const operator = document.getElementsByClassName('operator');
-const AC = document.getElementsByClassName('AC');
-const equal = document.getElementsByClassName('equal');
-
-const click = one.addEventListener('click',console.log('click'));*/
 const mainDisplay = document.querySelector ('#mainDisplay');
 const scnDisplay = document.querySelector ('#scnDisplay'); 
 const numbers = document.getElementsByClassName('number');
@@ -61,35 +52,44 @@ const equal = document.getElementById('equal');
 let firstTerm;
 let secondTerm;
 let operator;
+equal.disabled = true;
 
 const clear = allClear.addEventListener('click',()=>{
     mainDisplay.innerHTML = "";
     scnDisplay.innerHTML = "";
+    firstTerm = "";
+    secondTerm = "";
+    equal.disabled = true;
 });
 
 
 for (button of numbers) {
-    button.addEventListener('click', function onClick() {
-      mainDisplay.innerHTML += this.value;
+    button.addEventListener('click', function () {
       
+        mainDisplay.innerHTML += this.value;
+     
     });
 };
 
 for (operator of operators){
     operator.addEventListener('click', function() {
+        
         firstTerm = mainDisplay.innerHTML;
         operator = this.value;
-        scnDisplay.innerHTML = `${firstTerm} ${this.value}`;
+        scnDisplay.innerHTML = firstTerm;
         mainDisplay.innerHTML = "";
+        equal.disabled = false;
         
     });
 };
 
 const result = equal.addEventListener('click', function(){
     secondTerm = mainDisplay.innerHTML;
+    mainDisplay.innerHTML="";
     scnDisplay.innerHTML = `${firstTerm} ${operator} ${secondTerm} =`;
-    mainDisplay.innerHTML = operate(operator,firstTerm,secondTerm); 
-
+    mainDisplay.innerHTML = operate(operator,parseInt(firstTerm),parseInt(secondTerm));
+    equal.disabled = true;
+ 
 });
 
 
