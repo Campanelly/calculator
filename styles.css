@@ -12,11 +12,12 @@ html {
 body{
     background-color: rgb(169, 169, 255);
     display: flex;
+    flex-direction: column;
     justify-items: center;
     
 }
 header{
-  margin: 5% auto;
+  margin: 2% auto;
 }
 h1{
   
@@ -27,8 +28,7 @@ h1{
 .calculator{
     border: 1px solid gray;
     border-radius: 5px;
-    margin: 5% auto;
-    
+    margin: 2% auto;
     width: 50%;
     max-width: 500px ;
     height: 60%;
@@ -71,16 +71,16 @@ button {
   .number:hover {
     background-color: yellow;
   }
-  .AC{
+  #AC{
     background-color: rgb(255, 124, 124);
   }
-  .AC:hover{
+  #AC:hover{
     background-color: rgb(255, 0 , 0);
   }
-  .operator, .equal {
+  .operator, #equal {
     background-color: rgb(255, 196, 86);
   }
- .operator:hover, .equal:hover{
+ .operator:hover, #equal:hover{
     background-color: orange;
  }
 
