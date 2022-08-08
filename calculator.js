@@ -52,14 +52,35 @@ const AC = document.getElementsByClassName('AC');
 const equal = document.getElementsByClassName('equal');
 
 const click = one.addEventListener('click',console.log('click'));*/
-const display = document.querySelector ('#display');
+const mainDisplay = document.querySelector ('#mainDisplay');
+const scnDisplay = document.querySelector ('#scnDisplay'); 
 const numbers = document.getElementsByClassName('number');
+const operators = document.getElementsByClassName('operator');
+const allClear = document.getElementById ('AC');
+let firstTerm;
+let secondTerm;
+const clear = allClear.addEventListener('click',()=>{
+    mainDisplay.innerHTML = "";
+    scnDisplay.innerHTML = "";
+});
+
 
 for (button of numbers) {
     button.addEventListener('click', function onClick() {
-      display.innerHTML += this.value;
+      mainDisplay.innerHTML += this.value;
+      
     });
   }
+for (operator of operators){
+    operator.addEventListener('click', function() {
+        firstTerm = mainDisplay.innerHTML;
+        scnDisplay.innerHTML = firstTerm + this.value;
+        mainDisplay.innerHTML = '';
+        
+    });
+}
+
+
 
 
     
