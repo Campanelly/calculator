@@ -12,11 +12,12 @@ const multiply = function (firstNumber , secondNumber){
 };
 
 const divide = function (firstNumber , secondNumber){
-    
+    let result;
     if(secondNumber == 0){
         return 'error';
     }
-    return firstNumber / secondNumber;
+    result = firstNumber / secondNumber;
+    return result.toFixed(2);
 };
 
 const operate = function (operator,firstNumber,secondNumber){
@@ -70,18 +71,20 @@ for (operator of operators){
     operator.addEventListener('click', function() {
         if(mainDisplay.innerHTML==""){
             return false;
-        };
+        }
+                     
         firstTerm = mainDisplay.innerHTML;
         operator = this.value;
-        scnDisplay.innerHTML = `${firstTerm} ${this.value}`;
+        scnDisplay.innerHTML = `${firstTerm} ${this.value} ${secondTerm}`;
         mainDisplay.innerHTML = "";
+        
 
         
         
     });
 };
 
-const result = equal.addEventListener('click', function(){
+const result = equal.addEventListener('click', function (){
     
     if(firstTerm == ""){
         return false;
@@ -90,6 +93,8 @@ const result = equal.addEventListener('click', function(){
     secondTerm = mainDisplay.innerHTML;
     scnDisplay.innerHTML = `${firstTerm} ${operator} ${secondTerm} =`;
     mainDisplay.innerHTML = operate(operator,parseInt(firstTerm),parseInt(secondTerm));
+    firstTerm = "";
+    secondTerm = "";
     
  
 });
