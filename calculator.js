@@ -1,29 +1,22 @@
 
 const add = function (firstNumber , secondNumber){
-    let result;
-    result = firstNumber + secondNumber;
-    return result;
+    return firstNumber + secondNumber;
 };
 
 const substract = function (firstNumber , secondNumber){
-    let result;
-    result = firstNumber - secondNumber;
-    return result;
+    return firstNumber - secondNumber;
 };
 
 const multiply = function (firstNumber , secondNumber){
-    let result;
-    result = firstNumber * secondNumber;
-    return result;
+    return firstNumber * secondNumber;
 };
 
 const divide = function (firstNumber , secondNumber){
-    let result;
+    
     if(secondNumber == 0){
         return 'error';
     }
-    result = firstNumber / secondNumber;
-    return result;
+    return firstNumber / secondNumber;
 };
 
 const operate = function (operator,firstNumber,secondNumber){
@@ -51,22 +44,23 @@ const allClear = document.getElementById ('AC');
 const equal = document.getElementById('equal');
 let firstTerm;
 let secondTerm;
-let operator;
-equal.disabled = true;
+let operator = "";
+
 
 const clear = allClear.addEventListener('click',()=>{
     mainDisplay.innerHTML = "";
     scnDisplay.innerHTML = "";
     firstTerm = "";
     secondTerm = "";
-    equal.disabled = true;
+   
 });
 
 
 for (button of numbers) {
     button.addEventListener('click', function () {
-      
+        
         mainDisplay.innerHTML += this.value;
+
      
     });
 };
@@ -76,19 +70,19 @@ for (operator of operators){
         
         firstTerm = mainDisplay.innerHTML;
         operator = this.value;
-        scnDisplay.innerHTML = firstTerm;
-        mainDisplay.innerHTML = "";
-        equal.disabled = false;
+        scnDisplay.innerHTML = firstTerm += this.value;
+
+        
         
     });
 };
 
 const result = equal.addEventListener('click', function(){
+    
     secondTerm = mainDisplay.innerHTML;
-    mainDisplay.innerHTML="";
-    scnDisplay.innerHTML = `${firstTerm} ${operator} ${secondTerm} =`;
+    scnDisplay.innerHTML += secondTerm + "=" /*`${firstTerm} ${operator} ${secondTerm} =`;*/
     mainDisplay.innerHTML = operate(operator,parseInt(firstTerm),parseInt(secondTerm));
-    equal.disabled = true;
+    
  
 });
 
