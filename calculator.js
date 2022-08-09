@@ -51,7 +51,7 @@ let operator = "";
 
 const clear = allClear.addEventListener('click',()=>{
     mainDisplay.innerHTML = "";
-    scnDisplay.innerHTML = "";
+    scnDisplay.innerHTML = ".";
     firstTerm = "";
     secondTerm = "";
    

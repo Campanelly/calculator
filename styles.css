@@ -19,7 +19,7 @@ html {
     margin: 20% auto;
     width: 80%;
     max-width: 360px ;
-    height: 60%;
+    
    }
   
 }
@@ -43,10 +43,10 @@ h1{
 .calculator{
     border: 1px solid gray;
     border-radius: 5px;
-    margin: 2% auto;
+    margin: 1% auto;
     width: 50%;
     max-width: 500px ;
-    height: 60%;
+    
    }
 
 #mainDisplay{
