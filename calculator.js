@@ -42,9 +42,10 @@ const numbers = document.getElementsByClassName('number');
 const operators = document.getElementsByClassName('operator');
 const allClear = document.getElementById ('AC');
 const equal = document.getElementById('equal');
-let firstTerm;
-let secondTerm;
+let firstTerm="";
+let secondTerm="";
 let operator = "";
+
 
 
 const clear = allClear.addEventListener('click',()=>{
@@ -58,8 +59,8 @@ const clear = allClear.addEventListener('click',()=>{
 
 for (button of numbers) {
     button.addEventListener('click', function () {
-        
         mainDisplay.innerHTML += this.value;
+       
 
      
     });
@@ -67,10 +68,13 @@ for (button of numbers) {
 
 for (operator of operators){
     operator.addEventListener('click', function() {
-        
+        if(mainDisplay.innerHTML==""){
+            return false;
+        };
         firstTerm = mainDisplay.innerHTML;
         operator = this.value;
-        scnDisplay.innerHTML = firstTerm += this.value;
+        scnDisplay.innerHTML = `${firstTerm} ${this.value}`;
+        mainDisplay.innerHTML = "";
 
         
         
@@ -79,8 +83,12 @@ for (operator of operators){
 
 const result = equal.addEventListener('click', function(){
     
+    if(firstTerm == ""){
+        return false;
+    };
+
     secondTerm = mainDisplay.innerHTML;
-    scnDisplay.innerHTML += secondTerm + "=" /*`${firstTerm} ${operator} ${secondTerm} =`;*/
+    scnDisplay.innerHTML = `${firstTerm} ${operator} ${secondTerm} =`;
     mainDisplay.innerHTML = operate(operator,parseInt(firstTerm),parseInt(secondTerm));
     
  
